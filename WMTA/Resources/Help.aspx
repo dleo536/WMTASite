@@ -19,7 +19,7 @@
                             <a href="../Resource Files/2016 Ineligible Pieces.pdf" target="_blank">Ineligible Compositions For Piano Solo - Examples</a>
                         </div>
                         <div class="resource">
-                            <a href="../Resource Files/ComposersTableLastName2014.pdf" target="_blank">Composer List</a>
+                            <a href="http://www.wisconsinmusicteachers.com/event-information-and-rules-handbook/choosing-repertoire" target="_blank">Composer List</a>
                             <div>
                                 <label class="resource-note"><b>Note:</b> Some composers may be considered to be in more than one time period.  Based on historical acceptance and decisions made by the composition committee, please refer to what is designated in the above composer list; or to what is already assigned to a specific composition in the Ovation database.</label>
                             </div>
