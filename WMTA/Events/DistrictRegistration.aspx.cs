@@ -898,6 +898,7 @@ namespace WMTA.Events
         }
 
         /* Modified by Sam Olson on 1/2/2017 to update valid audition tracks
+         * 
          * Pre:
          * Post:  If an instrument is selected, the valid audition tracks will be
          *        updated.

@@ -112,11 +112,14 @@ public partial class DbInterfaceStudentAudition
     }
 
     /* Modified by Sam Olson on 1/2/2017 to add instrument as determinant
+     * 
+     * Modified by Sam Olson on 2/7/2017 to remove instrument as determinant
+     * and create restriction on grades 6 and below
+     * 
      * Pre:
      * Post: The valid audition tracks determined by the entered grade,
-     *       audition type, and instrument is returned.  Brass, Guitar,
-     *       Percussion, String, or Woodwind are not allowed on tracks
-     *       D2NM or D3
+     *       audition type, and instrument is returned.  Grades 6 and
+     *       below are not allowed on tracks D2NM or D3
      * @param grade is the current grade of the student
      * @param auditionType is the audition type (solo or duet)
      * @param instrument is the instrument the student is playing
@@ -150,18 +153,26 @@ public partial class DbInterfaceStudentAudition
 
             adapter.Fill(table);
 
-            if (instrument == "Brass"
-                || instrument == "Guitar"
-                || instrument == "Percussion"
-                || instrument == "String"
-                || instrument == "Woodwind"
-                )
+            if (!String.IsNullOrEmpty(grade) && Convert.ToInt32(grade) <= 6)
             {
                 foreach (DataRow r in table.Rows)
                     foreach (string item in r.ItemArray)
                         if (item == "D3" || item == "D2NM")
                             r.Delete();
             }
+
+            //if (instrument == "Brass"
+            //    || instrument == "Guitar"
+            //    || instrument == "Percussion"
+            //    || instrument == "String"
+            //    || instrument == "Woodwind"
+            //    )
+            //{
+            //    foreach (DataRow r in table.Rows)
+            //        foreach (string item in r.ItemArray)
+            //            if (item == "D3" || item == "D2NM")
+            //                r.Delete();
+            //}
         }
         catch (Exception e)
         {
