@@ -116,10 +116,14 @@ public partial class DbInterfaceStudentAudition
      * Modified by Sam Olson on 2/7/2017 to remove instrument as determinant
      * and create restriction on grades 6 and below
      * 
+     * Modified by Sam Olson on 1/2/2017 to add instrument as determinant
+     * again
+     * 
      * Pre:
      * Post: The valid audition tracks determined by the entered grade,
      *       audition type, and instrument is returned.  Grades 6 and
-     *       below are not allowed on tracks D2NM or D3
+     *       below are not allowed on tracks D2NM or D3. Brass, Guitar,
+     *       Percussion, String, or Woodwind are not allowed on track D2NM.
      * @param grade is the current grade of the student
      * @param auditionType is the audition type (solo or duet)
      * @param instrument is the instrument the student is playing
@@ -155,24 +159,18 @@ public partial class DbInterfaceStudentAudition
 
             if (!String.IsNullOrEmpty(grade) && Convert.ToInt32(grade) <= 6)
             {
-                foreach (DataRow r in table.Rows)
-                    foreach (string item in r.ItemArray)
+                foreach (DataRow row in table.Rows)
+                    foreach (string item in row.ItemArray)
                         if (item == "D3" || item == "D2NM")
-                            r.Delete();
+                            row.Delete();
             }
-
-            //if (instrument == "Brass"
-            //    || instrument == "Guitar"
-            //    || instrument == "Percussion"
-            //    || instrument == "String"
-            //    || instrument == "Woodwind"
-            //    )
-            //{
-            //    foreach (DataRow r in table.Rows)
-            //        foreach (string item in r.ItemArray)
-            //            if (item == "D3" || item == "D2NM")
-            //                r.Delete();
-            //}
+            else if (instrument != "Piano")
+            {
+                foreach (DataRow row in table.Rows)
+                    foreach (string item in row.ItemArray)
+                        if (item == "D2NM")
+                            row.Delete();
+            }
         }
         catch (Exception e)
         {
