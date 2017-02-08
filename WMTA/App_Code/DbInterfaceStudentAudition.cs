@@ -116,7 +116,7 @@ public partial class DbInterfaceStudentAudition
      * Modified by Sam Olson on 2/7/2017 to remove instrument as determinant
      * and create restriction on grades 6 and below
      * 
-     * Modified by Sam Olson on 1/2/2017 to add instrument as determinant
+     * Modified by Sam Olson on 2/8/2017 to add instrument as determinant
      * again
      * 
      * Pre:
