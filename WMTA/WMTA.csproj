@@ -293,6 +293,7 @@
     <Content Include="Reporting\DistrictCollationRoomReports.aspx" />
     <Content Include="Reporting\DistrictChairFeeSummary.aspx" />
     <Content Include="Reporting\TheoryTestReports.aspx" />
+    <Content Include="Reporting\BadgerChairFeeSummary.aspx" />
     <Content Include="Resources\Help.aspx" />
     <Content Include="Resources\SendFeedback.aspx" />
     <Content Include="Resources\ViewHelpRequests.aspx" />
@@ -948,6 +949,13 @@
     </Compile>
     <Compile Include="Reporting\TheoryTestReports.aspx.designer.cs">
       <DependentUpon>TheoryTestReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\BadgerChairFeeSummary.aspx.cs">
+      <DependentUpon>BadgerChairFeeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\BadgerChairFeeSummary.aspx.designer.cs">
+      <DependentUpon>BadgerChairFeeSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Help.aspx.cs">
       <DependentUpon>Help.aspx</DependentUpon>

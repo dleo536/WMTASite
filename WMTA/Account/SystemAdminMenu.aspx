@@ -107,6 +107,7 @@
                                         <li><a href="../Reporting/BadgerExecutiveSummary.aspx" class="smaller-font">Badger Executive Summary</a></li>
                                         <li><a href="../Reporting/AwardsView.aspx" class="smaller-font">Awards View</a></li>
                                         <li><a href="../Reporting/FullDataDump.aspx" class="smaller-font">Full Year Data</a></li>
+                                        <li><a href="../Reporting/BadgerChairFeeSummary.aspx" class="smaller-font">Badger Chair Fee Summary</a></li>
                                     </ul>
                                 </div>
                                 <a href="../Resources/ViewHelpRequests.aspx" class="list-group-item">View Help Requests</a>

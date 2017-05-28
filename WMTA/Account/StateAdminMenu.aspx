@@ -73,6 +73,7 @@
                                         <li><a href="../Reporting/BadgerTeacherFees.aspx" class="smaller-font">Badger Teacher Fee Summary</a></li>
                                         <li><a href="../Reporting/BadgerJudgingForms.aspx" class="smaller-font">Badger Judging Forms</a></li>
                                         <li><a href="../Reporting/BadgerExecutiveSummary.aspx" class="smaller-font">Badger Executive Summary</a></li>
+                                        <li><a href="../Reporting/BadgerChairFeeSummary.aspx" class="smaller-font">Badger Chair Fee Summary</a></li>
                                     </ul>
                                 </div>
                             </div>
