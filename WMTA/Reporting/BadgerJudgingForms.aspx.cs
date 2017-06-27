@@ -64,11 +64,11 @@ namespace WMTA.Reporting
 
                 showInfoMessage("Please allow several minutes for your reports to generate.");
 
-                createReport("BadgerPianoJudgingFormOdd", rptPianoForm, auditionOrgId, teacherId);
-                createReport("BadgerOrganJudgingFormOdd", rptOrganForm, auditionOrgId, teacherId);
-                createReport("BadgerVocalJudgingFormOdd", rptVocalForm, auditionOrgId, teacherId);
-                createReport("BadgerStringsJudgingFormOdd", rptStringsForm, auditionOrgId, teacherId);
-                createReport("BadgerInstrumentalJudgingFormOdd", rptInstrumentalForm, auditionOrgId, teacherId);
+                createReport("BadgerPianoJudgingForm", rptPianoForm, auditionOrgId, teacherId);
+                createReport("BadgerOrganJudgingForm", rptOrganForm, auditionOrgId, teacherId);
+                createReport("BadgerVocalJudgingForm", rptVocalForm, auditionOrgId, teacherId);
+                createReport("BadgerStringsJudgingForm", rptStringsForm, auditionOrgId, teacherId);
+                createReport("BadgerInstrumentalJudgingForm", rptInstrumentalForm, auditionOrgId, teacherId);
             }
             else
             {
