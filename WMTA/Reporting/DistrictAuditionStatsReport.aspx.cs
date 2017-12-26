@@ -88,7 +88,7 @@ namespace WMTA.Reporting
             {
                 showInfoMessage("Please allow several minutes for your reports to generate.");
 
-                createReport("DistrictStudentStatistics", rptDistrictStudentStats, auditionOrgId);
+                createReport("DistrictAuditionStatistics", rptDistrictStudentStats, auditionOrgId);
                 createReport("DistrictJudgesStatistics", rptDistrictJudgeStats, auditionOrgId);
             }
             else
