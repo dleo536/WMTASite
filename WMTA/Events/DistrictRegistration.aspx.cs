@@ -2053,6 +2053,7 @@ namespace WMTA.Events
         }
 
         /*
+        * Modified by Sam Olson on 2/20/2018 to add exception for top level
         * Pre:
         * Post: Determines whether or not the student is allowed to take the chosen theory level.
         *       If the student has gotten a 5 on the entered theory level or any higher theory level,
@@ -2067,11 +2068,21 @@ namespace WMTA.Events
             if (Int32.TryParse(lblStudentId.Text, out studentId))
             {
                 string theoryTest = ddlTheoryLevel.SelectedValue;
-                result = DbInterfaceStudentAudition.CountTheoryLevel5s(studentId, theoryTest) < 2;
 
-                if (!result) 
+                // No limit on number of 5s on top level
+                if (ddlTheoryLevel.SelectedIndex == ddlTheoryLevel.Items.Count - 1
+                    || ddlTheoryLevel.SelectedValue == "AB") // Temporarily unlimited 5s for AB while adding new level AC
                 {
-                    showWarningMessage("The student has received a 5 on the selected theory level or a higher level more than one time.  Please choose a higher level.");
+                    result = true;
+                }
+                else
+                {
+                    result = DbInterfaceStudentAudition.CountTheoryLevel5s(studentId, theoryTest) < 2;
+
+                    if (!result)
+                    {
+                        showWarningMessage("The student has received a 5 on the selected theory level or a higher level more than one time.  Please choose a higher level.");
+                    }
                 }
             }
             else
