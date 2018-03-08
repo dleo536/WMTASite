@@ -638,10 +638,14 @@ namespace WMTA.Events
                             txtAccompanist.Text = districtAudition.accompanist;
                             ddlAuditionType.SelectedIndex =
                                 ddlAuditionType.Items.IndexOf(ddlAuditionType.Items.FindByText(districtAudition.auditionType));
-                            ddlAuditionTrack.SelectedIndex =
-                                ddlAuditionTrack.Items.IndexOf(ddlAuditionTrack.Items.FindByText(districtAudition.auditionTrack));
                             ddlSite.SelectedValue = districtAudition.districtId.ToString();
                             setAuditionDate();
+
+                            //load valid audition tracks
+                            setValidAuditionTracks();
+
+                            ddlAuditionTrack.SelectedIndex =
+                                ddlAuditionTrack.Items.IndexOf(ddlAuditionTrack.Items.FindByText(districtAudition.auditionTrack));
 
                             //load valid theory levels
                             setTheoryLevel();
