@@ -2058,6 +2058,7 @@ namespace WMTA.Events
 
         /*
         * Modified by Sam Olson on 2/20/2018 to add exception for top level
+        * Modified by Daniel Leo on 1/7/2019 to allow AB to graduate to AC
         * Pre:
         * Post: Determines whether or not the student is allowed to take the chosen theory level.
         *       If the student has gotten a 5 on the entered theory level or any higher theory level,
@@ -2074,8 +2075,7 @@ namespace WMTA.Events
                 string theoryTest = ddlTheoryLevel.SelectedValue;
 
                 // No limit on number of 5s on top level
-                if (ddlTheoryLevel.SelectedIndex == ddlTheoryLevel.Items.Count - 1
-                    || ddlTheoryLevel.SelectedValue == "AB") // Temporarily unlimited 5s for AB while adding new level AC
+                if (ddlTheoryLevel.SelectedIndex == ddlTheoryLevel.Items.Count - 1) //code edited by Daniel Leo to allow AB to graduate to AC
                 {
                     result = true;
                 }
@@ -2143,7 +2143,7 @@ namespace WMTA.Events
             return Page.IsValid;
         }
 
-        /*
+        /* Code edited by Daniel Leo on 1/2/2019 to allow for new composition rules
          * Pre:
          * Post: Indicates whether the selected styles and number of different styles are 
          *       sufficient for the student's grade and selected audition track
@@ -2154,6 +2154,7 @@ namespace WMTA.Events
             int grade = getEnteredGrade();
             string audTrack = ddlAuditionTrack.Text;
             List<string> selectedStyles = new List<string>();
+            List<string> selectedComposers = new List<string>();
             bool isValid = true, hasRequiredStyle = false;
             string requiredStyles = "";
 
@@ -2172,26 +2173,34 @@ namespace WMTA.Events
             {
                 if (!selectedStyles.Contains(tblCompositions.Rows[i].Cells[4].Text.ToString()))
                     selectedStyles.Add(tblCompositions.Rows[i].Cells[4].Text.ToString());
+
+
+                //adds each unique composers
+                if (!selectedComposers.Contains(tblCompositions.Rows[i].Cells[3].Text.ToString()))
+                    selectedComposers.Add(tblCompositions.Rows[i].Cells[3].Text.ToString());
             }
 
             //make sure the number of styles is equal to the requirement
-            if (requirements.requiredNumStyles > selectedStyles.Count)
-            {
-                if (grade > 7 && audTrack.Equals("D2"))
-                {
-                    showWarningMessage("For D2 students, Grades 7-12, each Composition must be from a different Period.");
-                }
-                else
-                {
-                    showWarningMessage("There must be " + requirements.requiredNumStyles.ToString() +
-                                    " compositions of unique styles for the selected audition track");
-                }
+            //if (requirements.requiredNumStyles > selectedStyles.Count)
+            //{
+            //    if (grade > 7 && audTrack.Equals("D2"))
+            //    {
+            //        showWarningMessage("For D2 students, Grades 7-12, each Composition must be from a different Period.");
+            //    }
+            //    else
+            //    {
+            //        showWarningMessage("There must be " + requirements.requiredNumStyles.ToString() +
+            //                        " compositions of unique styles for the selected audition track");
+            //    }
 
-                isValid = false;
-            }
+            //    isValid = false;
+            //}
 
             //if there are no required styles, return the current result
             if (requirements.requiredStyles == null) return isValid;
+
+             
+            
 
             //make sure a composition of each required style has been chosen
             foreach (string style in requirements.requiredStyles)
@@ -2202,6 +2211,14 @@ namespace WMTA.Events
                     hasRequiredStyle = true;
             }
 
+
+            if (selectedComposers.Count < 2 && grade >= 7 && !audTrack.Equals("D2"))
+            {
+                showWarningMessage("The selected audition track requires that there be at least two unique composers ");
+                isValid = false;
+            }
+
+
             //if any required styles were not chosen, display an error message with the required styles
             if (!hasRequiredStyle)
             {
@@ -2210,7 +2227,7 @@ namespace WMTA.Events
                 showWarningMessage("The selected audition track requires that there be compositions " +
                                 "of at least one of the following styles: " + requiredStyles);
                 isValid = false;
-            }
+               }
 
             return isValid;
         }

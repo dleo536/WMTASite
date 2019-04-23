@@ -64,6 +64,11 @@
             <div class="text-align-center"><h3 class="center">Theory Test AB</h3></div>
             <rsweb:ReportViewer ID="rptAB" runat="server" CssClass="report-viewer"></rsweb:ReportViewer>
         </div>
+         <div>
+            <div class="text-align-center"><h3 class="center">Theory Test AC</h3></div>
+            <rsweb:ReportViewer ID="rptAC" runat="server" CssClass="report-viewer"></rsweb:ReportViewer>
+        </div>
+        
         <div>
             <div class="text-align-center"><h3 class="center">Theory Test EA-Alto</h3></div>
             <rsweb:ReportViewer ID="rptEAalto" runat="server" CssClass="report-viewer"></rsweb:ReportViewer>
@@ -111,6 +116,10 @@
         <div>
             <div class="text-align-center"><h3 class="center">Theory Test IC</h3></div>
             <rsweb:ReportViewer ID="rptIC" runat="server" CssClass="report-viewer"></rsweb:ReportViewer>
+        </div>
+         <div>
+            <div class="text-align-center"><h3 class="center">Theory Test PE</h3></div>
+            <rsweb:ReportViewer ID="rptPE" runat="server" CssClass="report-viewer"></rsweb:ReportViewer>
         </div>
     </div>
     <script>

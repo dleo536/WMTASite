@@ -110,6 +110,7 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="../Contacts/ManageContacts.aspx?action=2" class="smaller-font">Edit Contacts</a></li>
+                                        <li><a href="../Contacts/ViewRegisteredContacts.aspx" class="smaller-font">View Registered Contacts</a></li>
                                     </ul>
                                 </div>
                             </div>

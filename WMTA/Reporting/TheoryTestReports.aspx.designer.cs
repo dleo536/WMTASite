@@ -112,6 +112,15 @@ namespace WMTA.Reporting {
         protected global::Microsoft.Reporting.WebForms.ReportViewer rptAB;
         
         /// <summary>
+        /// rptAC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptAC;
+        
+        /// <summary>
         /// rptEAalto control.
         /// </summary>
         /// <remarks>
@@ -218,5 +227,14 @@ namespace WMTA.Reporting {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.Reporting.WebForms.ReportViewer rptIC;
+        
+        /// <summary>
+        /// rptPE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptPE;
     }
 }

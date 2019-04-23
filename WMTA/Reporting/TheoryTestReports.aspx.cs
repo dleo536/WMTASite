@@ -80,10 +80,13 @@ namespace WMTA.Reporting
          * Post: If an event matching the search criteria is found, execute
          *       the reports for that audition
          */
+         //Modified by Daniel Leo 3/3/2019
+         //Added AC and PE tests
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string[] theoryTests = new string[] { "AA", "AB", "EA-alto", "EA-bass", "EA-keybrd", "EA-treble", "EB-alto", "EB-bass", "EB-keybrd", "EB-treble", "EC", "IA", "IB", "IC" };
-            ReportViewer[] rptViewers = new ReportViewer[] { rptAA, rptAB, rptEAalto, rptEAbass, rptEAkeybrd, rptEAtreble, rptEBalto, rptEBbass, rptEBkeybrd, rptEBtreble, rptEC, rptIA, rptIB, rptIC };
+            string[] theoryTests = new string[] { "AA", "AB", "AC", "EA-alto", "EA-bass", "EA-keybrd", "EA-treble", "EB-alto", "EB-bass", "EB-keybrd", "EB-treble", "EC", "IA", "IB", "IC", "PE" };
+            ReportViewer[] rptViewers = new ReportViewer[] { rptAA, rptAB, rptAC, rptEAalto, rptEAbass, rptEAkeybrd, rptEAtreble, rptEBalto, rptEBbass, rptEBkeybrd, rptEBtreble, rptEC, rptIA, rptIB, rptIC, rptPE};
 
             Tuple<int, string> orgIdAndSeries = DbInterfaceAudition.GetAuditionOrgIdAndTestSeries(Convert.ToInt32(ddlDistrictSearch.SelectedValue),
                                                                                                   Convert.ToInt32(ddlYear.SelectedValue));

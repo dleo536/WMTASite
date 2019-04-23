@@ -18,10 +18,14 @@ namespace WMTA.Contacts
             }
         }
 
+
+        //edited by Daniel Leo 3/8/2019
+        //Give District Chairs the ability to View registered Contacts
         /*
          * Pre:
          * Post: If the user is not logged in they will be redirected to the welcome screen
          */
+         //
         private void checkPermissions()
         {
             //if the user is not logged in, send them to login screen
@@ -30,8 +34,8 @@ namespace WMTA.Contacts
             else
             {
                 User user = (User)Session[Utility.userRole];
-
-                if (!user.permissionLevel.Contains("A"))
+                // || (user.permissionLevel.Contains("A"))
+                if (!(user.permissionLevel.Contains("D")))
                 {
                     Response.Redirect("/Default.aspx");
                 }
