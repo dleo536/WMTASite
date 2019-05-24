@@ -20,6 +20,7 @@ namespace WMTA.Contacts
 
 
         //edited by Daniel Leo 3/8/2019
+        //edited by Daniel Leo 5/24/2019
         //Give District Chairs the ability to View registered Contacts
         /*
          * Pre:
@@ -34,8 +35,8 @@ namespace WMTA.Contacts
             else
             {
                 User user = (User)Session[Utility.userRole];
-                // || (user.permissionLevel.Contains("A"))
-                if (!(user.permissionLevel.Contains("D")))
+              
+                if ((!(user.permissionLevel.Contains("D"))) && (!user.permissionLevel.Contains("S")) && (!user.permissionLevel.Contains("A")))
                 {
                     Response.Redirect("/Default.aspx");
                 }

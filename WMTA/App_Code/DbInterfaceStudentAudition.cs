@@ -119,6 +119,8 @@ public partial class DbInterfaceStudentAudition
      * Modified by Sam Olson on 2/8/2017 to add instrument as determinant
      * again
      * 
+     * Modified by Daniel Leo on 4/24/2019 to allow d2nm for voices
+     * 
      * Pre:
      * Post: The valid audition tracks determined by the entered grade,
      *       audition type, and instrument is returned.  Grades 6 and
@@ -164,7 +166,7 @@ public partial class DbInterfaceStudentAudition
                         if (item == "D3" || item == "D2NM")
                             row.Delete();
             }
-            else if (instrument != "Piano")
+            else if (instrument != "Piano" && instrument != "Voice")
             {
                 foreach (DataRow row in table.Rows)
                     foreach (string item in row.ItemArray)
